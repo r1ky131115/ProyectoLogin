@@ -28,7 +28,8 @@ namespace ProyectoLogin.Controllers
 
             if (clainUser.Identity.IsAuthenticated)
             {
-                nombreUsuario = clainUser.Claims.Where(c => c.Type == ClaimTypes.Name)
+                nombreUsuario = clainUser.Claims
+                    .Where(c => c.Type == ClaimTypes.Name)
                     .Select(c => c.Value).SingleOrDefault();
             }
 

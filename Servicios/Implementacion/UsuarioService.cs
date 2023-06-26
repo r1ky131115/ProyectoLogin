@@ -16,8 +16,8 @@ namespace ProyectoLogin.Servicios.Implementacion
 
         public async Task<Usuario> GetUsuario(string correo, string clave)
         {
-            Usuario usuarioEncontrado = await _dbContext.Usuarios.Where(u => 
-            u.Correo == correo && u.Clave == clave)
+            Usuario usuarioEncontrado = await _dbContext.Usuarios.
+                Where(u => u.Correo == correo && u.Clave == clave)
                 .FirstOrDefaultAsync();
             return usuarioEncontrado;
         }
